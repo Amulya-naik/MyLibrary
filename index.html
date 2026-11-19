@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087f73">
+  <meta name="description" content="MyLibrary — discover books, explore reading and connect with your library.">
+  <title>MyLibrary | Your Books, Your World</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="MyLibrary home"><span class="brand-mark">M</span><span>MyLibrary</span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav id="mainNav" aria-label="Main navigation">
+    <a href="#home" data-i18n="navHome">Home</a>
+    <a href="#books" data-i18n="navBooks">Browse books</a>
+    <a href="#services" data-i18n="navServices">Services</a>
+    <a href="#updates" data-i18n="navUpdates">Updates</a>
+    <a href="#about" data-i18n="navAbout">About</a>
+    <select id="languageSelect" aria-label="Choose language">
+      <option value="en">English</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option>
+    </select>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="eyebrow">A SMARTER WAY TO DISCOVER BOOKS</span>
+      <h1 data-i18n="heroTitle">A world of stories.<br><em>One library.</em></h1>
+      <p data-i18n="heroText">Discover books, explore new interests and stay connected with your library — all in one place.</p>
+      <form id="searchForm" class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search by title, author or ISBN..." data-i18n-placeholder="searchPlaceholder" aria-label="Search books">
+        <button type="button" id="voiceSearch" class="voice-button" aria-label="Search by voice" title="Voice search">🎙</button>
+        <button type="submit" class="search-button" data-i18n="searchButton">Search</button>
+      </form>
+      <p class="voice-status" id="voiceStatus" aria-live="polite"></p>
+      <a class="text-link" href="#books" data-i18n="exploreLink">Explore the collection →</a>
+      <div class="hero-points"><span>✓ Easy discovery</span><span>✓ Reader friendly</span><span>✓ Multilingual</span></div>
+    </div>
+    <div class="hero-visual" aria-label="Illustration of books">
+      <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+      <div class="visual-note">READ · LEARN · GROW</div>
+      <div class="book-stack"><div class="book book-a"><span>THE ART OF<br>LEARNING</span></div><div class="book book-b"><span>NEW<br>IDEAS</span></div><div class="book book-c"><span>YOUR NEXT<br>CHAPTER</span></div></div>
+      <div class="visual-caption">Find a book that moves you.</div>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="Platform highlights">
+    <div><strong>Discover</strong><span>Explore books by interest</span></div>
+    <div><strong>Connect</strong><span>Stay close to your library</span></div>
+    <div><strong>Grow</strong><span>Build your reading habit</span></div>
+  </section>
+
+  <section class="section" id="books">
+    <div class="section-heading"><div><span class="eyebrow">EXPLORE THE COLLECTION</span><h2 data-i18n="booksTitle">Find your next favourite</h2><p data-i18n="booksText">Browse this sample catalogue and try the search and category filters.</p></div><span class="result-count" id="resultCount"></span></div>
+    <div class="catalogue-tools">
+      <label class="filter-label" for="categoryFilter">Category</label>
+      <select id="categoryFilter"><option value="all">All categories</option><option value="Technology">Technology</option><option value="Science">Science</option><option value="Fiction">Fiction</option><option value="History">History</option><option value="Personal Development">Personal Development</option></select>
+      <label class="filter-label" for="availabilityFilter">Availability</label>
+      <select id="availabilityFilter"><option value="all">All books</option><option value="available">Available</option><option value="borrowed">Currently borrowed</option></select>
+      <button id="clearFilters" class="clear-button" type="button">Clear filters</button>
+    </div>
+    <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+    <p class="demo-note"><strong>Prototype catalogue:</strong> These are sample records for demonstration. Real book titles, copies, shelf numbers and live availability will be added after the library's catalogue is confirmed.</p>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="section-heading"><div><span class="eyebrow">MORE THAN A CATALOGUE</span><h2>Designed around readers</h2><p>Explore the services planned for the MyLibrary platform.</p></div></div>
+    <div class="service-grid">
+      <article class="service-card"><span class="service-icon">✦</span><h3>AI Reading Assistant</h3><p>Get help discovering books and finding your next read. AI features are planned for a later phase.</p><span class="planned-tag">Planned feature</span></article>
+      <article class="service-card"><span class="service-icon">▣</span><h3>Digital Membership</h3><p>A secure membership card with QR code for participating libraries.</p><span class="planned-tag">Planned feature</span></article>
+      <article class="service-card"><span class="service-icon">⌖</span><h3>Find a Book's Shelf</h3><p>Locate a book by its library section, shelf and rack number.</p><span class="planned-tag">Planned feature</span></article>
+      <article class="service-card"><span class="service-icon">♧</span><h3>Reading Challenges</h3><p>Set reading goals, build streaks and celebrate achievements.</p><span class="planned-tag">Planned feature</span></article>
+    </div>
+  </section>
+
+  <section class="updates-section" id="updates">
+    <div class="updates-card"><div><span class="eyebrow">LIBRARY UPDATES</span><h2>Stay in the loop</h2><p>Announcements, new arrivals and service updates will appear here when the library provides verified information.</p></div><div class="updates-placeholder"><span>✉</span><strong>Updates coming soon</strong><small>Official announcements will be published here.</small></div></div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div><span class="eyebrow">ABOUT MYLIBRARY</span><h2>Your library, made easier to explore.</h2></div>
+    <p>MyLibrary is a proposed digital library and book-exchange platform. It aims to help readers discover books, check availability and connect with library services. The first version is a front-end demonstration; live library services will be added after coordination and approval from participating libraries.</p>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="footer-main"><div><a class="brand footer-brand" href="#home"><span class="brand-mark">M</span><span>MyLibrary</span></a><p>Your Books, Your World.</p></div><div><strong>Explore</strong><a href="#books">Browse books</a><a href="#services">Services</a><a href="#updates">Library updates</a></div><div><strong>Project status</strong><p>Community project prototype</p><p>Library contact details will be added after confirmation.</p></div></div>
+  <div class="footer-bottom">© 2026 MyLibrary · Website prototype</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
